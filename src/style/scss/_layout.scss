@@ -1,0 +1,11 @@
+#root {
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+}
+
+.main-and-nav {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
