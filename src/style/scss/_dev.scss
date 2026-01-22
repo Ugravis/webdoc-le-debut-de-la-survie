@@ -1,0 +1,11 @@
+h1 { font-size: 32px; }
+
+button {
+  color: rgb(0, 142, 14);
+  p { color: rgb(0, 142, 14); }
+}
+
+a {
+  color: blue;
+  &:hover { text-decoration: underline; }
+}

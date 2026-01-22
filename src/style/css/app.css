@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Molle:ital@1&display=swap");
 /* http://meyerweb.com/eric/tools/css/reset/
    v2.0 | 20110126
    License: none (public domain)
@@ -157,6 +159,30 @@ button {
   background-color: transparent;
 }
 
+:root {
+  --color-bg: #fff;
+  --color-text: #000000;
+  --color-primary: #ffe1a9;
+  --color-grey: #d8d8d8;
+  --color-secondary: #95caff;
+  --color-secondary-light: #f0f8ff;
+  --color-blue-link: rgb(77, 77, 255);
+}
+
+[data-theme=dark] {
+  --color-bg: #000000;
+  --color-text: #fff;
+  --color-primary: #ffe1a9;
+  --color-grey: #d8d8d8;
+  --color-secondary: #95caff;
+  --color-secondary-light: #f0f8ff;
+  --color-blue-link: rgb(77, 77, 255);
+}
+
+button {
+  cursor: pointer;
+}
+
 .gap-1 {
   display: flex;
   gap: 0.5rem;
@@ -207,6 +233,126 @@ button {
   gap: 5rem;
 }
 
+.m-1 {
+  margin: 0.5rem;
+}
+
+.mh-1 {
+  margin: 0.5rem 0;
+}
+
+.mw-1 {
+  margin: 0 0.5rem;
+}
+
+.m-2 {
+  margin: 1rem;
+}
+
+.mh-2 {
+  margin: 1rem 0;
+}
+
+.mw-2 {
+  margin: 0 1rem;
+}
+
+.m-3 {
+  margin: 1.5rem;
+}
+
+.mh-3 {
+  margin: 1.5rem 0;
+}
+
+.mw-3 {
+  margin: 0 1.5rem;
+}
+
+.m-4 {
+  margin: 2rem;
+}
+
+.mh-4 {
+  margin: 2rem 0;
+}
+
+.mw-4 {
+  margin: 0 2rem;
+}
+
+.m-5 {
+  margin: 2.5rem;
+}
+
+.mh-5 {
+  margin: 2.5rem 0;
+}
+
+.mw-5 {
+  margin: 0 2.5rem;
+}
+
+.m-6 {
+  margin: 3rem;
+}
+
+.mh-6 {
+  margin: 3rem 0;
+}
+
+.mw-6 {
+  margin: 0 3rem;
+}
+
+.m-7 {
+  margin: 3.5rem;
+}
+
+.mh-7 {
+  margin: 3.5rem 0;
+}
+
+.mw-7 {
+  margin: 0 3.5rem;
+}
+
+.m-8 {
+  margin: 4rem;
+}
+
+.mh-8 {
+  margin: 4rem 0;
+}
+
+.mw-8 {
+  margin: 0 4rem;
+}
+
+.m-9 {
+  margin: 4.5rem;
+}
+
+.mh-9 {
+  margin: 4.5rem 0;
+}
+
+.mw-9 {
+  margin: 0 4.5rem;
+}
+
+.m-10 {
+  margin: 5rem;
+}
+
+.mh-10 {
+  margin: 5rem 0;
+}
+
+.mw-10 {
+  margin: 0 5rem;
+}
+
 .flex {
   display: flex;
   flex-direction: row;
@@ -215,11 +361,19 @@ button {
   flex-wrap: nowrap;
 }
 
-.flex-column {
+.flex-col {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: stretch;
+  flex-wrap: nowrap;
+}
+
+.flex-col-center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   flex-wrap: nowrap;
 }
 
@@ -239,16 +393,371 @@ button {
   flex-wrap: nowrap;
 }
 
+.flex-between {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: nowrap;
+}
+
+.flex-col-between {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: nowrap;
+}
+
+.flex-around {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: nowrap;
+}
+
+.flex-grow {
+  flex-grow: 1;
+}
+
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
+.width-max {
+  width: 100%;
+}
+
+.h-max {
+  height: 100%;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.b {
+  font-weight: bold !important;
+}
+
+.red {
+  background-color: red;
+}
+
+.yellow {
+  background-color: yellow;
+}
+
+.p1 {
+  font-size: 1rem;
+  color: var(--color-text);
+  font-family: "Montserrat";
+  font-weight: 400;
+  text-transform: none;
+  font-style: none;
+  line-height: normal;
+}
+
+.p2 {
+  font-size: 0.9rem;
+  color: var(--color-text);
+  font-family: "Montserrat";
+  font-weight: 400;
+  text-transform: none;
+  font-style: none;
+  line-height: normal;
+}
+
+.h4 {
+  font-size: 1.1rem;
+  color: var(--color-text);
+  font-family: "Montserrat";
+  font-weight: 400;
+  text-transform: none;
+  font-style: none;
+  line-height: normal;
+}
+
+.h4-b {
+  font-size: 1.1rem;
+  color: var(--color-text);
+  font-family: "Montserrat";
+  font-weight: 500;
+  text-transform: none;
+  font-style: none;
+  line-height: normal;
+}
+
+.h1 {
+  font-size: 2rem;
+  color: var(--color-text);
+  font-family: "Molle";
+  font-weight: 500;
+  text-transform: none;
+  font-style: none;
+  line-height: normal;
+}
+
+.hHuge {
+  font-size: 4rem;
+  color: var(--color-text);
+  font-family: "Molle";
+  font-weight: 400;
+  text-transform: none;
+  font-style: none;
+  line-height: normal;
+}
+
+p {
+  font-size: 1rem;
+  color: var(--color-text);
+  font-family: "Montserrat";
+  font-weight: 400;
+  text-transform: none;
+  font-style: none;
+  line-height: normal;
+}
+
+h1 {
+  font-size: 2rem;
+  color: var(--color-text);
+  font-family: "Molle";
+  font-weight: 500;
+  text-transform: none;
+  font-style: none;
+  line-height: normal;
+}
+
+h4 {
+  font-size: 1.1rem;
+  color: var(--color-text);
+  font-family: "Montserrat";
+  font-weight: 400;
+  text-transform: none;
+  font-style: none;
+  line-height: normal;
+}
+
+button {
+  font-size: 1rem;
+  color: var(--color-text);
+  font-family: "Montserrat";
+  font-weight: 400;
+  text-transform: none;
+  font-style: none;
+  line-height: normal;
+}
+
+.material-icons {
+  cursor: pointer;
+}
+
+.icon-p1 {
+  font-size: 22px;
+}
+
+.btn-large {
+  border: none;
+  border-radius: 9999px;
+  white-space: nowrap;
+  transition: 0.1s;
+  font-size: 1.1rem;
+  color: var(--color-text);
+  font-family: "Montserrat";
+  font-weight: 400;
+  text-transform: none;
+  font-style: none;
+  line-height: normal;
+  padding: 20px 40px;
+  background-color: var(--color-primary);
+}
+
+.btn-small {
+  border: none;
+  border-radius: 9999px;
+  white-space: nowrap;
+  transition: 0.1s;
+  font-size: 1rem;
+  color: var(--color-text);
+  font-family: "Montserrat";
+  font-weight: 400;
+  text-transform: none;
+  font-style: none;
+  line-height: normal;
+  padding: 5px 18px;
+  background-color: var(--color-primary);
+}
+
+.btn-small-secondary {
+  border: none;
+  border-radius: 9999px;
+  white-space: nowrap;
+  transition: 0.1s;
+  font-size: 1rem;
+  color: var(--color-text);
+  font-family: "Montserrat";
+  font-weight: 400;
+  text-transform: none;
+  font-style: none;
+  line-height: normal;
+  padding: 5px 18px;
+  background-color: var(--color-secondary);
+  color: var(--color-bg);
+}
+
+.blue-link {
+  font-size: 0.9rem;
+  color: var(--color-text);
+  font-family: "Montserrat";
+  font-weight: 400;
+  text-transform: none;
+  font-style: none;
+  line-height: normal;
+  color: var(--color-blue-link);
+}
+.blue-link:hover {
+  text-decoration: underline;
+}
+
+.separator {
+  height: 1px;
+  background-color: var(--color-grey);
+  width: 100%;
+}
+
+#home-page .intro-txt {
+  max-width: 900px;
+}
+
+#student-interview-page .left-box {
+  width: 60%;
+}
+#student-interview-page .left-box iframe {
+  aspect-ratio: 16/10.7;
+  border-radius: 15px;
+}
+#student-interview-page .right-box {
+  width: 35%;
+}
+
+.choices-page .choice-card {
+  max-width: 250px;
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.063);
+  border-radius: 10px;
+}
+.choices-page .choice-card .choice-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  aspect-ratio: 1/1.3;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+.choices-page .choice-card:hover {
+  transform: scale(1.03);
+}
+.choices-page .choice-card {
+  transition: 0.1s;
+}
+
+#chat .phone {
+  border-radius: 40px;
+  border: 10px solid var(--color-text);
+  aspect-ratio: 1/1.9;
+  max-width: 335px;
+  position: relative;
+  background-color: var(--color-secondary-light);
+  padding-top: 40px;
+  max-height: 696.5px;
+}
+#chat .phone::after {
+  content: "";
+  width: 20px;
+  height: 20px;
+  background-color: var(--color-text);
+  border-radius: 999px;
+  position: absolute;
+  top: 10px;
+}
+#chat .phone .messages {
+  margin: 10px;
+  overflow-y: scroll;
+}
+#chat .phone .messages .message {
+  background-color: var(--color-secondary);
+  max-width: 65%;
+  border-radius: 25px;
+  padding: 12px;
+  position: relative;
+}
+#chat .phone .messages .message::before {
+  content: "";
+  background-color: var(--color-secondary);
+  width: 15px;
+  height: 15px;
+  position: absolute;
+  bottom: -4px;
+  left: 10%;
+  transform: rotate(65deg);
+}
+#chat .phone .messages .message-player {
+  background-color: var(--color-grey);
+}
+#chat .phone .messages .message-player::before {
+  content: "";
+  background-color: var(--color-grey);
+  width: 15px;
+  height: 15px;
+  position: absolute;
+  bottom: -4px;
+  left: 10%;
+  transform: rotate(65deg);
+}
+#chat .phone .choices-box {
+  background-color: var(--color-bg);
+  border-bottom-left-radius: 40px;
+  border-bottom-right-radius: 40px;
+  padding: 10px;
+}
+
+body {
+  font-size: 1rem;
+  color: var(--color-text);
+  font-family: "Montserrat";
+  font-weight: 400;
+  text-transform: none;
+  font-style: none;
+  line-height: normal;
+  width: 100%;
+  background-color: var(--color-bg);
+}
+
 #root {
   display: flex;
   flex-direction: column;
-  width: 100vw;
+  width: 100%;
 }
 
 .main-and-nav {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  width: 100%;
+  height: 100%;
+}
+
+* {
+  color: var(--color-text);
+}
+
+.cont-full {
+  margin: 0px 3%;
+}
+
+.cont-boxed {
+  max-width: 1440px;
+  margin: 0px 3%;
 }
 
 /*# sourceMappingURL=app.css.map */

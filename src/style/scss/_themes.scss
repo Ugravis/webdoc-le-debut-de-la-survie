@@ -1,0 +1,35 @@
+$neutral-100: #fff;
+$neutral-500: #d8d8d8;
+$neutral-900: #000000;
+
+$primary-500: #ffe1a9;
+$secondary-500: #95caff;
+$secondary-100: #f0f8ff;
+
+$blue-link: rgb(77, 77, 255);
+
+:root {
+  --color-bg: #{$neutral-100};
+  --color-text: #{$neutral-900};
+  --color-primary: #{$primary-500};
+
+  --color-grey: #{$neutral-500};
+  
+  --color-secondary: #{$secondary-500};
+  --color-secondary-light: #{$secondary-100};
+  
+  --color-blue-link: #{$blue-link};
+}
+
+[data-theme="dark"] {
+  --color-bg: #{$neutral-900};
+  --color-text: #{$neutral-100};
+  --color-primary: #{$primary-500};
+
+  --color-grey: #{$neutral-500};
+
+  --color-secondary: #{$secondary-500};
+  --color-secondary-light: #{$secondary-100};
+
+  --color-blue-link: #{$blue-link};
+}

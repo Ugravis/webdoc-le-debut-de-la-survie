@@ -1,0 +1,50 @@
+@use '../text' as t;
+
+@mixin button($size: 'large', $type: 'primary') {
+  border: none;
+  border-radius: 9999px;
+  white-space: nowrap;
+  transition: 0.1s;
+
+  @if $size == 'large' {
+    @include t.text(h4);
+    padding: 20px 40px;
+
+  } @else {
+    @include t.text(p1);
+    padding: 5px 18px;
+  }
+
+  @if $type == 'primary' {
+    background-color: var(--color-primary);
+    // &:hover {
+    //   background-color: var(--color-primary);
+    // }
+
+  } @else if $type == 'secondary' {
+    background-color: var(--color-secondary);
+    color: var(--color-bg)
+    // &:hover {
+    //   background-color: var(--color-secondary);
+    // }
+  }
+}
+
+.btn-large {
+  @include button()
+}
+.btn-small {
+  @include button('small')
+}
+.btn-small-secondary {
+  @include button('small', 'secondary')
+}
+
+.blue-link {
+  @include t.text(p2);
+  color: var(--color-blue-link);
+
+  &:hover {
+    text-decoration: underline;
+  }
+}

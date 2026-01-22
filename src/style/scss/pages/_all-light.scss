@@ -1,0 +1,20 @@
+#home-page {
+  .intro-txt {
+    max-width: 900px;
+  }
+}
+
+#student-interview-page {
+  .left-box {
+    width: 60%;
+
+    iframe {
+      aspect-ratio: 16/10.7;
+      border-radius: 15px;
+    }
+  }
+
+  .right-box {
+    width: 35%;
+  }
+}

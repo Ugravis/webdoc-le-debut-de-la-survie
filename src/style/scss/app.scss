@@ -2,7 +2,22 @@
 
 @use "variables";
 @use "themes";
+@use "html";
 
 @use "utils";
+@use "text";
+
+@use "./components/icons";
+@use "./components/buttons";
+@use "./components/separator";
+
+@use "./pages/all-light";
+@use "./pages/choices";
+@use "./pages/chat";
+
+//
+// @use "./dev";
+//
 
 @use "layout";
+

@@ -1,0 +1,68 @@
+#chat {
+  .phone {
+    border-radius: 40px;
+    border: 10px solid var(--color-text);
+    aspect-ratio: 1/1.9;
+    max-width: 335px;
+    position: relative;
+    background-color: var(--color-secondary-light);
+    padding-top: 40px;
+    max-height: 696.5px;
+
+    &::after {
+      content: "";
+      width: 20px;
+      height: 20px;
+      background-color: var(--color-text);
+      border-radius: 999px;
+      position: absolute;
+      top: 10px;
+    }
+
+    .messages {
+      margin: 10px;
+      overflow-y: scroll;
+
+      .message {
+      background-color: var(--color-secondary);
+      max-width: 65%;
+      border-radius: 25px;
+      padding: 12px;
+      position: relative;
+
+        &::before {
+          content: "";
+          background-color: var(--color-secondary);
+          width: 15px;
+          height: 15px;
+          position: absolute;
+          bottom: -4px;
+          left: 10%;
+          transform: rotate(65deg);
+        }
+      }
+
+      .message-player {
+        background-color: var(--color-grey);
+
+        &::before {
+          content: "";
+          background-color: var(--color-grey);
+          width: 15px;
+          height: 15px;
+          position: absolute;
+          bottom: -4px;
+          left: 10%;
+          transform: rotate(65deg);
+        }
+      }
+    }
+
+    .choices-box {
+      background-color: var(--color-bg);
+      border-bottom-left-radius: 40px;
+      border-bottom-right-radius: 40px;
+      padding: 10px;
+    }
+  }
+}

@@ -1,0 +1,48 @@
+@use "variables" as v;
+@use "sass:map";
+
+$texts-map: (
+  p1:    (size: 1rem, family: v.$font-base),
+  p2:    (size: 0.9rem, family: v.$font-base),
+
+  h4:    (size: 1.1rem, family: v.$font-base),
+  h4-b:  (size: 1.1rem, family: v.$font-base, weight: 500),
+  h1:    (size: 2rem, family: v.$font-special, weight: 500),
+  hHuge: (size: 4rem, family: v.$font-special)
+);
+
+$text-defaults: (
+  family: v.$font-base,
+  color: var(--color-text),
+  weight: 400,
+  transform: none,
+  style: none,
+  line-height: normal
+);
+
+@mixin text-from-map($row) {
+  $merged: map.merge($text-defaults, $row);
+
+  font-size: map.get($merged, size);
+  color: map.get($merged, color);
+  font-family: map.get($merged, family);
+  font-weight: map.get($merged, weight);
+  text-transform: map.get($merged, transform);
+  font-style: map.get($merged, style);
+  line-height: map.get($merged, line-height);
+}
+
+@each $name, $row in $texts-map {
+  .#{$name} {
+    @include text-from-map($row);
+  }
+}
+
+@mixin text($name) {
+  @include text-from-map(map.get($texts-map, $name))
+}
+
+p      { @include text(p1) }
+h1     { @include text(h1) }
+h4     { @include text(h4) }
+button { @include text(p1) }

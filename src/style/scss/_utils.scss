@@ -11,6 +11,26 @@
   }
 }
 
+// Margin
+
+@mixin margin($i, $type: 'full') {
+  @if $type == 'full' {
+    margin: $i * 0.5rem;
+  
+  } @else if $type == 'height' or $type == 'h' {
+    margin: $i * 0.5rem 0;
+  
+  } @else if $type == 'width' or $type == 'w' {
+    margin: 0 $i * 0.5rem;
+  }
+}
+
+@for $i from 1 through 10 {
+  .m-#{$i} { @include margin($i); }
+  .mh-#{$i} { @include margin($i, 'h'); }
+  .mw-#{$i} { @include margin($i, 'w'); }
+}
+
 // Flex
 
 @mixin flex(
@@ -35,12 +55,57 @@
 .flex {
   @include flex();
 }
-.flex-column {
+.flex-col {
   @include flex(column);
+}
+.flex-col-center {
+  @include flex(column, $justify: center, $align: center);
 }
 .flex-wrap {
   @include flex($wrap: wrap);
 }
 .flex-center {
   @include flex($justify: center, $align: center)
+}
+.flex-between {
+  @include flex($justify: space-between, $align: center)
+}
+.flex-col-between {
+  @include flex(column, $justify: space-between, $align: center)
+}
+.flex-around {
+  @include flex($justify: space-around, $align: center)
+}
+.flex-grow {
+  flex-grow: 1;
+}
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
+// Width & height
+
+.width-max {
+  width: 100%;
+}
+.h-max {
+  height: 100%;
+}
+
+// Text
+
+.text-center {
+  text-align: center;
+}
+.b {
+  font-weight: bold !important;
+}
+
+// Debug
+
+.red {
+  background-color: red;
+}
+.yellow {
+  background-color: yellow;
 }

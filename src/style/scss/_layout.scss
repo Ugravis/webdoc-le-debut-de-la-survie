@@ -1,11 +1,31 @@
+@use "text" as t;
+@use "utils" as u;
+
+body {
+  @include t.text(p1);
+  width: 100%;
+  background-color: var(--color-bg);
+}
+
 #root {
   display: flex;
   flex-direction: column;
-  width: 100vw;
+  width: 100%;
 }
 
 .main-and-nav {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  width: 100%;
+  height: 100%;
 }
+
+* {
+  color: var(--color-text);
+}
+
+// Containers
+
+.cont-full  { margin: 0px 3%; }
+.cont-boxed { max-width: 1440px; margin: 0px 3%; }
