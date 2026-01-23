@@ -6,7 +6,8 @@ import Footer from './components/layout/Footer'
 
 function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename='/travaux/sae302'>
+    {/* <BrowserRouter> */}
       <div className="main-and-nav">
         <Navbar />
         <AppRoutes></AppRoutes>

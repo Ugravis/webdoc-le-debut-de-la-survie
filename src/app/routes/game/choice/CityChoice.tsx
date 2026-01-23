@@ -23,7 +23,7 @@ export default function CityChoice() {
             key={city.id}
           >
             <img 
-              src={`/src/assets/images/city/${city.image}.jpg`} 
+              src={`${import.meta.env.BASE_URL}images/city/${city.image}.jpg`} 
               alt={city.image}
               className='choice-img'
             />

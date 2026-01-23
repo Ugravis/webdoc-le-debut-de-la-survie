@@ -73,3 +73,6 @@ export default defineConfig([
   },
 ])
 ```
+# Prod
+vite.config.ts
+App.tsx

@@ -27,7 +27,7 @@ export default function StudyChoice() {
             key={study.id}
           >
             <img 
-              src={`/src/assets/images/study/${study.image}.jpg`} 
+              src={`${import.meta.env.BASE_URL}images/study/${study.image}.jpg`} 
               alt={study.image}
               className='choice-img'
             />

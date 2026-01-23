@@ -24,7 +24,7 @@ export default function CharacterChoice() {
             key={char.id}
           >
             <img 
-              src={`/src/assets/images/character/${char.image}.jpg`} 
+              src={`${import.meta.env.BASE_URL}images/character/${char.image}.jpg`} 
               alt={char.image}
               className='choice-img'
             />

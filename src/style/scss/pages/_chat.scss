@@ -1,4 +1,8 @@
 #chat {
+  .text {
+    width: 50%;
+  }
+
   .phone {
     border-radius: 40px;
     border: 10px solid var(--color-text);
@@ -8,6 +12,7 @@
     background-color: var(--color-secondary-light);
     padding-top: 40px;
     max-height: 696.5px;
+    width: 355px;
 
     &::after {
       content: "";

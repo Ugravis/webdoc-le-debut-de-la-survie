@@ -4,4 +4,6 @@ import react from '@vitejs/plugin-react'
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [react()],
+  base: "/travaux/sae302/",
+  // base: "/travaux/sae302/" VERSION PROD,
 })
