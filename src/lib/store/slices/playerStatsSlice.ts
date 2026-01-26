@@ -34,7 +34,7 @@ export interface PlayerSlice {
 
 const initialPlayerState: Player = {
   stats: {
-    budget: { current: 0 },
+    budget: { current: 15 },
     mentalHealth: { current: 0 },
     school: { current: 0 }
   }

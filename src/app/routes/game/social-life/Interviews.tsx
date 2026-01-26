@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 export default function Interviews() {
   return (
     <section id="student-interview-page" className="cont-boxed flex-col gap-5">
@@ -13,6 +15,8 @@ export default function Interviews() {
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowFullScreen
       ></iframe>
+
+      <Link to="/game/mental-health/chat" className="btn-small">Next, to mental-health / chat</Link>
     </section>
   )
 }

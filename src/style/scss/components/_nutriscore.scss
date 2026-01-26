@@ -1,0 +1,14 @@
+@use "../text" as t;
+
+.nutriscore-box > div:last-child > .text {
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+.nutriscore-box > div:first-child > .text {
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+
+.active {
+  border-radius: 5px;
+}

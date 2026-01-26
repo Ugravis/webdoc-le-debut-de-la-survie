@@ -1,6 +1,9 @@
 import { type ChoicesData } from './choices.types.ts'
 
 const choicesData: ChoicesData = {
+  
+  // Character
+
   "characters": [
     {
       "id": 0,
@@ -14,6 +17,8 @@ const choicesData: ChoicesData = {
       "image": "character2"
     }
   ],
+
+  // City
 
   "city": [
     {
@@ -52,30 +57,32 @@ const choicesData: ChoicesData = {
     }
   ],
 
+  // Study
+
   studies: [
     {
       id: 0, 
       nodeId: 0,
       options: [
-        { id: 0, university: "Université de Reims Champagne-Ardenne", school: "IUT de Reims", field: "Informatique", "image": "study1" },
-        { id: 1, university: "Université de Reims Champagne-Ardenne", school: "ESAD", field: "Arts", "image": "study2" },
-        { id: 2, university: "Université de Reims Champagne-Ardenne", school: "Faculté de Droit", field: "Droit", "image": "study3" }
+        { id: 0, university: "Université de Reims Champagne-Ardenne", school: "UFR de droit", field: "Law" },
+        { id: 1, university: "Université de Reims Champagne-Ardenne", school: "IUT de Reims", field: "Computer science" },
+        { id: 2, university: "Université de Reims Champagne-Ardenne", school: "UFR de médecine", field: "Biology" }
       ]
     }, {
       id: 1, 
       nodeId: 1,
       options: [
-        { id: 0, university: "Université de Lille", school: "Faculté d'informatique", field: "Informatique", "image": "study4" },
-        { id: 1, university: "Université de Lille", school: "SKEMA", field: "Commerce", "image": "study5" },
-        { id: 2, university: "Université Catholique de Lille", school: "ESPOL", field: "Sciences politiques", "image": "study6" }
+        { id: 3, university: "Université de Lille", school: "Faculté des sciences juridiques", field: "Law" },
+        { id: 4, university: "Université de Lille", school: "IUT de Lille", field: "Computer science" },
+        { id: 5, university: "Université Catholique de Lille", school: "Faculté de médecine", field: "Biology" }
       ]
     }, {
       id: 2, 
       nodeId: 2,
       options: [
-        { id: 0, university: "Sorbonne Université", school: "Faculté de médecine", field: "Médecine", "image": "study7" },
-        { id: 1, university: "Université Paris-Descartes", school: "IUT de Paris", field: "Communication", "image": "study8" },
-        { id: 2, university: "Université Gustave Eiffel", school: "IMAC", field: "Info Com", "image": "study9" }
+        { id: 6, university: "Sorbonne Université", school: "Ecole de droit", field: "Law" },
+        { id: 7, university: "Université Paris-Descartes", school: "IUT de Paris", field: "Computer science" },
+        { id: 8, university: "Université Paris-Saclay", school: "Faculté de médecine", field: "Biology" }
       ]
     }
   ]

@@ -164,7 +164,7 @@ button {
   --color-text: #000000;
   --color-primary: #ffe1a9;
   --color-grey: #d8d8d8;
-  --color-secondary: #95caff;
+  --color-secondary: #70b7ff;
   --color-secondary-light: #f0f8ff;
   --color-blue-link: rgb(77, 77, 255);
 }
@@ -174,7 +174,7 @@ button {
   --color-text: #fff;
   --color-primary: #ffe1a9;
   --color-grey: #d8d8d8;
-  --color-secondary: #95caff;
+  --color-secondary: #70b7ff;
   --color-secondary-light: #f0f8ff;
   --color-blue-link: rgb(77, 77, 255);
 }
@@ -628,6 +628,36 @@ button {
   width: 100%;
 }
 
+.nutriscore-box > div:last-child > .text {
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.nutriscore-box > div:first-child > .text {
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+
+.active {
+  border-radius: 5px;
+}
+
+.popup-overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  background-color: rgba(0, 0, 0, 0.3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.popup-overlay .popup-content {
+  background-color: var(--color-bg);
+  padding: 25px;
+  border-radius: 15px;
+}
+
 #home-page .intro-txt {
   max-width: 900px;
 }
@@ -661,6 +691,19 @@ button {
 }
 .choices-page .choice-card {
   transition: 0.1s;
+}
+
+#popup-intro-choices img {
+  max-width: 200px;
+  border-radius: 8px;
+}
+#popup-intro-choices .img-1 {
+  aspect-ratio: 1/2;
+  object-fit: cover;
+}
+#popup-intro-choices .img-2, #popup-intro-choices .img-3 {
+  aspect-ratio: 1/1;
+  object-fit: cover;
 }
 
 #chat .text {
@@ -727,6 +770,85 @@ button {
   padding: 10px;
 }
 
+.embla__slide .product-card {
+  border: 2px solid #000;
+  border-radius: 10px;
+  padding: 15px;
+}
+.embla__slide .product-card img {
+  width: 50px;
+}
+.embla__slide .is-selected {
+  background-color: rgb(216, 255, 216);
+  border: 2px solid green;
+  cursor: pointer;
+}
+
+.embla {
+  position: relative;
+  width: 100%;
+}
+.embla .embla__viewport {
+  overflow: hidden;
+  width: 100%;
+}
+.embla .embla__container {
+  display: flex;
+}
+.embla .embla__slide {
+  flex: 0 0 60%;
+  min-width: 0;
+  margin: 0px 10px;
+  border: 2px solid #000;
+  border-radius: 12px;
+  padding: 20px;
+}
+.embla .products-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 16px;
+  margin-top: 16px;
+}
+.embla .embla__dots_and_buttons {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 10px;
+}
+.embla .embla__dots_and_buttons .embla__prev, .embla .embla__dots_and_buttons .embla__next {
+  background: white;
+  border: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  font-size: 24px;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+.embla .embla__dots_and_buttons .embla__prev {
+  left: 10px;
+}
+.embla .embla__dots_and_buttons .embla__next {
+  right: 10px;
+}
+.embla .embla__dots_and_buttons .embla__dots {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+}
+.embla .embla__dots_and_buttons .embla__dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #ddd;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+.embla .embla__dots_and_buttons .embla__dot--selected {
+  background: #333;
+}
+
 body {
   font-size: 1rem;
   color: var(--color-text);
@@ -759,11 +881,13 @@ body {
 
 .cont-full {
   margin: 0px 3%;
+  position: relative;
 }
 
 .cont-boxed {
   max-width: 1440px;
   margin: 0px 3%;
+  position: relative;
 }
 
 /*# sourceMappingURL=app.css.map */

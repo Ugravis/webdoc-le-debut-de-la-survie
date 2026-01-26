@@ -27,7 +27,6 @@ export interface StudyOption {
   university: string
   school: string
   field: string
-  image: string
 }
 
 export interface StudiesNode {

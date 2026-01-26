@@ -27,5 +27,5 @@ body {
 
 // Containers
 
-.cont-full  { margin: 0px 3%; }
-.cont-boxed { max-width: 1440px; margin: 0px 3%; }
+.cont-full  { margin: 0px 3%; position: relative; }
+.cont-boxed { max-width: 1440px; margin: 0px 3%; position: relative; }

@@ -10,10 +10,13 @@
 @use "./components/icons";
 @use "./components/buttons";
 @use "./components/separator";
+@use "./components/nutriscore";
+@use "./components/popup";
 
 @use "./pages/all-light";
 @use "./pages/choices";
 @use "./pages/chat";
+@use "./pages/shopping";
 
 //
 // @use "./dev";
