@@ -1,4 +1,4 @@
-export type Nutriscore = 1 | 2 | 3 | 4
+export type Nutriscore = 1 | 2 | 3 | 4 | 10
 
 export interface Article {
   id: number

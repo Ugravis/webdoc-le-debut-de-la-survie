@@ -1,8 +1,11 @@
 $neutral-100: #fff;
 $neutral-500: #d8d8d8;
+$neutral-400: #e4e4e4;
 $neutral-900: #000000;
 
 $primary-500: #ffe1a9;
+$primary-400: rgb(255, 234, 193);
+
 $secondary-500: #70b7ff;
 $secondary-100: #f0f8ff;
 
@@ -12,8 +15,10 @@ $blue-link: rgb(77, 77, 255);
   --color-bg: #{$neutral-100};
   --color-text: #{$neutral-900};
   --color-primary: #{$primary-500};
+  --color-primary-hover: #{$primary-400};
 
   --color-grey: #{$neutral-500};
+  --color-grey-hover: #{$neutral-400};
   
   --color-secondary: #{$secondary-500};
   --color-secondary-light: #{$secondary-100};
@@ -25,8 +30,10 @@ $blue-link: rgb(77, 77, 255);
   --color-bg: #{$neutral-900};
   --color-text: #{$neutral-100};
   --color-primary: #{$primary-500};
+  --color-primary-hover: #{$primary-400};
 
   --color-grey: #{$neutral-500};
+  --color-grey-hover: #{$neutral-400};
 
   --color-secondary: #{$secondary-500};
   --color-secondary-light: #{$secondary-100};

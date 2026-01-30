@@ -1,0 +1,17 @@
+#conclusion-page {
+  img {
+    width: 200px;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+    border-radius: 9999px;
+  }
+
+  .cards {
+    &>div>div {
+      border: 2px solid var(--color-text);
+      padding: 25px;
+      border-radius: 15px;
+      width: 300px;
+    }
+  }
+}

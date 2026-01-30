@@ -1,0 +1,42 @@
+@use "../themes" as t;
+
+.press-review-page {
+  .paper {
+    border: 2px solid var(--color-text);
+    border-radius: 15px;
+    padding: 40px;
+  }
+
+  .main {
+    &>div {
+      width: 20%;
+    }
+
+    img {
+      width: 60%;
+      object-fit: cover;
+      border-radius: 15px;
+    }
+  }
+
+  .second {
+    &>div {
+      width: 50%;
+    }
+  }
+
+  .conclu {
+    background-color: rgb(255, 251, 240);
+    border: 2px solid rgb(255, 241, 190);
+    border-radius: 15px;
+    padding: 40px;
+
+    p, b {
+      color: t.$neutral-900;
+    }
+  }
+
+  .links a {
+    text-decoration: underline;
+  }
+}

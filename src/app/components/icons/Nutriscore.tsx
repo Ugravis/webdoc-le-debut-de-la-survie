@@ -1,7 +1,7 @@
 import React from "react";
 
 type NutriScoreProps = {
-  score: 0 | 1 | 2 | 3 | 4
+  score: 0 | 1 | 2 | 3 | 4 | 10
 };
 
 const NutriScore: React.FC<NutriScoreProps> = ({ score }) => {
@@ -12,6 +12,10 @@ const NutriScore: React.FC<NutriScoreProps> = ({ score }) => {
     { letter: "D", color: "#FF9800" },
     { letter: "E", color: "#F44336" },
   ];
+
+  if (score === 10) return(
+    <div className="not-nutriscore"></div>
+  )
 
   return (
     <div className="nutriscore-box">

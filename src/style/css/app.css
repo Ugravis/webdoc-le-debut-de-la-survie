@@ -1,5 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Molle:ital@1&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Goblin+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap");
 /* http://meyerweb.com/eric/tools/css/reset/
    v2.0 | 20110126
    License: none (public domain)
@@ -43,7 +45,6 @@ sub,
 sup,
 tt,
 var,
-b,
 u,
 i,
 center,
@@ -163,7 +164,9 @@ button {
   --color-bg: #fff;
   --color-text: #000000;
   --color-primary: #ffe1a9;
+  --color-primary-hover: rgb(255, 234, 193);
   --color-grey: #d8d8d8;
+  --color-grey-hover: #e4e4e4;
   --color-secondary: #70b7ff;
   --color-secondary-light: #f0f8ff;
   --color-blue-link: rgb(77, 77, 255);
@@ -173,7 +176,9 @@ button {
   --color-bg: #000000;
   --color-text: #fff;
   --color-primary: #ffe1a9;
+  --color-primary-hover: rgb(255, 234, 193);
   --color-grey: #d8d8d8;
+  --color-grey-hover: #e4e4e4;
   --color-secondary: #70b7ff;
   --color-secondary-light: #f0f8ff;
   --color-blue-link: rgb(77, 77, 255);
@@ -438,7 +443,7 @@ button {
 }
 
 .b {
-  font-weight: bold !important;
+  font-weight: 600 !important;
 }
 
 .red {
@@ -456,13 +461,23 @@ button {
   font-weight: 400;
   text-transform: none;
   font-style: none;
-  line-height: normal;
+  line-height: 150%;
 }
 
 .p2 {
   font-size: 0.9rem;
   color: var(--color-text);
   font-family: "Montserrat";
+  font-weight: 400;
+  text-transform: none;
+  font-style: none;
+  line-height: normal;
+}
+
+.p-code {
+  font-size: 1rem;
+  color: var(--color-text);
+  font-family: "Source Code Pro";
   font-weight: 400;
   text-transform: none;
   font-style: none;
@@ -489,6 +504,16 @@ button {
   line-height: normal;
 }
 
+.hHuge {
+  font-size: 4rem;
+  color: var(--color-text);
+  font-family: "Molle";
+  font-weight: 400;
+  text-transform: none;
+  font-style: none;
+  line-height: normal;
+}
+
 .h1 {
   font-size: 2rem;
   color: var(--color-text);
@@ -499,10 +524,20 @@ button {
   line-height: normal;
 }
 
-.hHuge {
-  font-size: 4rem;
+.h3 {
+  font-size: 1.5rem;
   color: var(--color-text);
   font-family: "Molle";
+  font-weight: 500;
+  text-transform: none;
+  font-style: none;
+  line-height: normal;
+}
+
+.h-logo {
+  font-size: 1.15rem;
+  color: var(--color-text);
+  font-family: "Goblin One";
   font-weight: 400;
   text-transform: none;
   font-style: none;
@@ -516,11 +551,21 @@ p {
   font-weight: 400;
   text-transform: none;
   font-style: none;
-  line-height: normal;
+  line-height: 150%;
 }
 
 h1 {
   font-size: 2rem;
+  color: var(--color-text);
+  font-family: "Molle";
+  font-weight: 500;
+  text-transform: none;
+  font-style: none;
+  line-height: normal;
+}
+
+h3 {
+  font-size: 1.5rem;
   color: var(--color-text);
   font-family: "Molle";
   font-weight: 500;
@@ -546,7 +591,15 @@ button {
   font-weight: 400;
   text-transform: none;
   font-style: none;
-  line-height: normal;
+  line-height: 150%;
+}
+
+b {
+  font-weight: 600;
+}
+
+i {
+  font-style: italic;
 }
 
 .material-icons {
@@ -573,6 +626,9 @@ button {
   background-color: var(--color-primary);
   color: #000000;
 }
+.btn-large:hover {
+  background-color: var(--color-primary-hover);
+}
 
 .btn-small {
   border: none;
@@ -585,10 +641,13 @@ button {
   font-weight: 400;
   text-transform: none;
   font-style: none;
-  line-height: normal;
+  line-height: 150%;
   padding: 5px 18px;
   background-color: var(--color-primary);
   color: #000000;
+}
+.btn-small:hover {
+  background-color: var(--color-primary-hover);
 }
 
 .btn-small-secondary {
@@ -602,10 +661,33 @@ button {
   font-weight: 400;
   text-transform: none;
   font-style: none;
-  line-height: normal;
+  line-height: 150%;
   padding: 5px 18px;
-  background-color: var(--color-secondary);
-  color: var(--color-bg);
+  background-color: var(--color-grey);
+  color: var(--color-text);
+}
+.btn-small-secondary:hover {
+  background-color: var(--color-grey-hover);
+}
+
+.btn-large-secondary {
+  border: none;
+  border-radius: 9999px;
+  white-space: nowrap;
+  transition: 0.1s;
+  font-size: 1.1rem;
+  color: var(--color-text);
+  font-family: "Montserrat";
+  font-weight: 400;
+  text-transform: none;
+  font-style: none;
+  line-height: normal;
+  padding: 20px 40px;
+  background-color: var(--color-grey);
+  color: var(--color-text);
+}
+.btn-large-secondary:hover {
+  background-color: var(--color-grey-hover);
 }
 
 .blue-link {
@@ -642,6 +724,13 @@ button {
   border-radius: 5px;
 }
 
+.not-nutriscore {
+  width: 120px;
+  height: 32px;
+  background-color: #e3e3e3;
+  border-radius: 5px;
+}
+
 .popup-overlay {
   position: absolute;
   width: 100%;
@@ -654,23 +743,48 @@ button {
 }
 .popup-overlay .popup-content {
   background-color: var(--color-bg);
-  padding: 25px;
+  padding: 30px;
   border-radius: 15px;
+  max-width: 450px;
+  gap: 1.5rem;
+}
+.popup-overlay .popup-content p, .popup-overlay .popup-content h1, .popup-overlay .popup-content h2, .popup-overlay .popup-content h3, .popup-overlay .popup-content h4, .popup-overlay .popup-content h5 {
+  text-align: center;
 }
 
 #home-page .intro-txt {
   max-width: 900px;
 }
 
-#student-interview-page .left-box {
+.interview-page .content {
+  width: 70%;
+}
+.interview-page .left-box {
   width: 60%;
 }
-#student-interview-page .right-box {
+.interview-page .right-box {
   width: 35%;
 }
-#student-interview-page iframe {
+.interview-page iframe {
   aspect-ratio: 16/10.7;
   border-radius: 15px;
+}
+.interview-page .video-link {
+  text-decoration: underline;
+}
+
+#footer {
+  background-color: var(--color-text);
+  padding: 55px;
+}
+#footer p, #footer a {
+  color: var(--color-bg);
+}
+#footer .h-logo {
+  color: var(--color-bg);
+}
+#footer .link:hover {
+  text-decoration: underline;
 }
 
 .choices-page .choice-card {
@@ -692,6 +806,9 @@ button {
 .choices-page .choice-card {
   transition: 0.1s;
 }
+.choices-page .bottom {
+  padding: 0px 15px;
+}
 
 #popup-intro-choices img {
   max-width: 200px;
@@ -707,7 +824,10 @@ button {
 }
 
 #chat .text {
-  width: 50%;
+  width: 40%;
+}
+#chat .text img {
+  border-radius: 15px;
 }
 #chat .phone {
   border-radius: 40px;
@@ -769,6 +889,16 @@ button {
   border-bottom-right-radius: 40px;
   padding: 10px;
 }
+#chat .choices-area {
+  width: 100%;
+}
+#chat .next-btn-box {
+  background-color: var(--color-bg);
+  width: 100%;
+  border-bottom-left-radius: 35px;
+  border-bottom-right-radius: 35px;
+  padding: 20px 0px;
+}
 
 .embla__slide .product-card {
   border: 2px solid #000;
@@ -782,6 +912,27 @@ button {
   background-color: rgb(216, 255, 216);
   border: 2px solid green;
   cursor: pointer;
+}
+.embla__slide .brand {
+  text-transform: uppercase;
+  font-weight: 600;
+  font-style: italic;
+}
+
+.receip-popup p {
+  font-size: 1rem;
+  color: var(--color-text);
+  font-family: "Source Code Pro";
+  font-weight: 400;
+  text-transform: none;
+  font-style: none;
+  line-height: normal;
+}
+
+.budget {
+  background-color: rgb(156, 253, 255);
+  padding: 5px 15px;
+  border-radius: 5px;
 }
 
 .embla {
@@ -849,6 +1000,105 @@ button {
   background: #333;
 }
 
+#exam-page .exam-container {
+  background-color: rgb(255, 251, 240);
+  border-radius: 15px;
+  border: 2px solid rgb(255, 241, 190);
+  border-radius: 15px;
+  padding: 40px;
+  width: 770px;
+}
+#exam-page .exam-container p, #exam-page .exam-container b, #exam-page .exam-container h4, #exam-page .exam-container label, #exam-page .exam-container strong, #exam-page .exam-container h3 {
+  color: #000000;
+}
+#exam-page .exam-container label, #exam-page .exam-container input {
+  cursor: pointer;
+}
+#exam-page .popup p, #exam-page .popup b, #exam-page .popup h4, #exam-page .popup h3, #exam-page .popup label, #exam-page .popup strong {
+  color: #000000;
+}
+
+#budget-doc-page .text-group > div {
+  width: 50%;
+  background-color: rgb(255, 251, 240);
+  border: 2px solid rgb(255, 241, 190);
+  border-radius: 15px;
+  padding: 40px;
+}
+#budget-doc-page .text-group > div p, #budget-doc-page .text-group > div h3, #budget-doc-page .text-group > div ul, #budget-doc-page .text-group > div li, #budget-doc-page .text-group > div b {
+  color: #000000;
+}
+#budget-doc-page .text-group .links a {
+  color: rgb(205, 158, 31);
+  text-decoration: underline;
+}
+#budget-doc-page .text-group .pink-tax {
+  background-color: rgb(255, 236, 239);
+  border: 2px solid rgb(255, 190, 201);
+}
+#budget-doc-page .text-group .pink-tax a {
+  color: rgb(205, 31, 164);
+  text-decoration: underline;
+}
+#budget-doc-page .text-group .img-article {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100%;
+  width: 100%;
+  flex-grow: 1;
+  border-radius: 15px;
+}
+#budget-doc-page .video-doc {
+  width: 50%;
+}
+#budget-doc-page iframe {
+  aspect-ratio: 16/9;
+  border-radius: 10px;
+}
+
+.press-review-page .paper {
+  border: 2px solid var(--color-text);
+  border-radius: 15px;
+  padding: 40px;
+}
+.press-review-page .main > div {
+  width: 20%;
+}
+.press-review-page .main img {
+  width: 60%;
+  object-fit: cover;
+  border-radius: 15px;
+}
+.press-review-page .second > div {
+  width: 50%;
+}
+.press-review-page .conclu {
+  background-color: rgb(255, 251, 240);
+  border: 2px solid rgb(255, 241, 190);
+  border-radius: 15px;
+  padding: 40px;
+}
+.press-review-page .conclu p, .press-review-page .conclu b {
+  color: #000000;
+}
+.press-review-page .links a {
+  text-decoration: underline;
+}
+
+#conclusion-page img {
+  width: 200px;
+  aspect-ratio: 1/1;
+  object-fit: cover;
+  border-radius: 9999px;
+}
+#conclusion-page .cards > div > div {
+  border: 2px solid var(--color-text);
+  padding: 25px;
+  border-radius: 15px;
+  width: 300px;
+}
+
 body {
   font-size: 1rem;
   color: var(--color-text);
@@ -856,7 +1106,7 @@ body {
   font-weight: 400;
   text-transform: none;
   font-style: none;
-  line-height: normal;
+  line-height: 150%;
   width: 100%;
   background-color: var(--color-bg);
 }
@@ -886,8 +1136,13 @@ body {
 
 .cont-boxed {
   max-width: 1440px;
-  margin: 0px 3%;
+  margin: 0px 5%;
   position: relative;
+}
+
+.page-section {
+  margin-top: 40px;
+  margin-bottom: 40px;
 }
 
 /*# sourceMappingURL=app.css.map */

@@ -1,3 +1,5 @@
+@use "../utils" as u;
+
 .popup-overlay {
   position: absolute;
   width: 100%;
@@ -10,7 +12,13 @@
 
   .popup-content {
     background-color: var(--color-bg);
-    padding: 25px;
+    padding: 30px;
     border-radius: 15px;
+    max-width: 450px;
+    @include u.gap(3);
+
+    p, h1, h2, h3, h4, h5 {
+      text-align: center;
+    }
   }
 }

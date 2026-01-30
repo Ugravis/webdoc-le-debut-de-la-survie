@@ -4,7 +4,11 @@
   }
 }
 
-#student-interview-page {
+.interview-page {
+  .content {
+    width: 70%;
+  }
+
   .left-box {
     width: 60%;
   }
@@ -14,5 +18,28 @@
   iframe {
     aspect-ratio: 16/10.7;
     border-radius: 15px;
+  }
+
+  .video-link {
+    text-decoration: underline;
+  }
+}
+
+#footer {
+  background-color: var(--color-text);
+  padding: 55px;
+  
+  p, a {
+    color: var(--color-bg);
+  }
+
+  .h-logo {
+    color: var(--color-bg);
+  }
+
+  .link {
+    &:hover {
+      text-decoration: underline;
+    }
   }
 }

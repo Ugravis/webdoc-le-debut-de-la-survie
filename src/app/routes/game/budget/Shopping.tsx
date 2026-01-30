@@ -13,6 +13,8 @@ export default function Shopping() {
   const setBudget = useStore((state) => state.setBudget)
   const player = useStore((state) => state.player)
 
+  const multiplier = player.city ? player.city.price : 1;
+
   const navigate = useNavigate()
 
   const [selectedProductIds, setSelectedProductIds] = useState<number[]>([])
@@ -70,7 +72,7 @@ export default function Shopping() {
           setSelectedProductIds(prev => [...prev, productId]);
           setBudget(nextBudget);
       } else {
-          alert("Pas assez de budget !");
+          alert("Not enought money !");
       }
     }
   }
@@ -79,14 +81,16 @@ export default function Shopping() {
     selectedProductIds.includes(product.id)
   )
 
-  const totalHTML = selectedProducts.reduce((sum, item) => sum + item.price, 0)
+  const totalHTML = selectedProducts.reduce((sum, item) => sum + (item.price * multiplier), 0)
   const total = Math.round(totalHTML * 100) / 100
   const tva = Math.round((total * 0.2) * 100) / 100
 
   return (
     <>
-      <section className="cont-boxed">
+      <section className="cont-boxed flex-grow flex-col-center gap-4 page-section">
         <h1>Shopping game</h1>
+
+        <p className="budget"><span className="b">{budget} €</span> left</p>
         
         <div className="embla">
           <div className="embla__viewport" ref={emblaRef}>
@@ -94,8 +98,10 @@ export default function Shopping() {
 
               {categories.map(([category, products]) => (
                 <div className="embla__slide" key={category}>
-                  <div className="embla__slide__inner">
-                    <h3>Rayon {category}</h3>
+                  <div className="embla__slide__inner flex-col gap-3">
+                    <div className="flex-center">
+                      <h3>{category} section</h3>
+                    </div>
 
                     <div className="flex flex-center flex-wrap gap-2">
                       {products.map(product => {
@@ -105,17 +111,17 @@ export default function Shopping() {
                           <button 
                             key={product.id}
                             className={`product-card flex gap-2 ${isSelected ? "is-selected" : ""}`}
-                            onClick={() => toggleProduct(product.id, product.price)}
+                            onClick={() => toggleProduct(product.id, (product.price * multiplier))}
                           >
                             <div className="flex-col flex-center">
-                              <img src={`${import.meta.env.BASE_URL}images/articles/${product.image}.jpg`} alt="" />
+                              <img src={`${import.meta.env.BASE_URL}images/articles/${product.image}.png`} alt="article" />
                             </div>
                             
-                            <div className="flex-col">
-                              <p className="brand">{product.brand}</p>
+                            <div className="flex-col gap-1">
+                              <p className="brand p2">{product.brand}</p>
                               <p>{product.name}</p>
                               <NutriScore score={product.nutriscore} />
-                              <p>{product.price} €</p>
+                              <p><b>{(product.price * multiplier).toFixed(2)} €</b></p>
                             </div>
                           </button>
                         )
@@ -146,57 +152,52 @@ export default function Shopping() {
           </div>
         </div>
 
-        <div className="flex-center">
-          <p>Votre argent : {budget} €</p>
-          <button 
-            className="btn-large"
-            onClick={() => setPopupVisible(true)}
-          >
-            Valider et payer
-          </button>
-        </div>
+        <button 
+          className="btn-large"
+          onClick={() => {
+            if (selectedProducts.length !== 0) {
+              setPopupVisible(true);
+            }
+          }}
+        >
+          Confirm and pay
+        </button>
       </section>
 
       {popupVisible && (
         <div className="popup-overlay" onClick={() => setPopupVisible(false)}>
-          <div className="popup-content flex-col" onClick={e => e.stopPropagation()}>
-            <h2>Store name</h2>
-            <h3>Ticket de caisse</h3>
-            <p>Ville : {useStore.getState().player.city?.name || "N/A"}</p>
-            <p>{new Date().toLocaleDateString()}</p>
-
-            <hr className="w-full my-2" />
-
-            <table className="receipt-table w-full text-left">
-              <thead>
-                <tr>
-                  <th>Article</th>
-                  <th className="text-right">Prix</th>
-                </tr>
-              </thead>
-              <tbody>
-                {selectedProducts.map(item => (
-                  <tr key={item.id}>
-                    <td>{item.brand}, {item.name}</td>
-                    <td className="text-right">{item.price.toFixed(2)} €</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-
-            <div>
-              <p>TOTAL : {total.toFixed(2)} €</p>
-              <p>Dont TVA (20%) : {tva.toFixed(2)} €</p>
+          <div className="popup-content flex-col receip-popup" onClick={e => e.stopPropagation()}>
+            <h3 className="text-center">Receip</h3>
+            
+            <div className="flex-col-center gap-1">
+              <h2 className="text-center">Ultra Market</h2>
+              <p>City : {useStore.getState().player.city?.name || "N/A"}</p>
+              <p>Le {new Date().toLocaleDateString()}</p>
             </div>
 
-            <p>Merci de votre visite, à bientôt !</p>
+            <div className="flex-col">
+              {selectedProducts.map(item => (
+                <div key={item.id} className="flex flex-between">
+                  <p>{item.brand}, {item.name}</p>
+                  <p>...</p>
+                  <p>{(item.price * multiplier).toFixed(2)} €</p>
+                </div>
+              ))}
+            </div>
+
+            <div className="flex-col gap-1">
+              <p>TOTAL : {total.toFixed(2)} €</p>
+              <p>Including VAT (20%) : {tva.toFixed(2)} €</p>
+            </div>
+
+            <p>Thank you for visiting, see you soon!</p>
             
-            <div>
+            <div className="flex-center">
               <button 
                 onClick={() => navigate('/game/budget/documentation')}
-                className="btn-small-secondary"
+                className="btn-small"
               >
-                Passer à la suite
+                Go next
               </button>
             </div>
           </div>
@@ -209,20 +210,26 @@ export default function Shopping() {
             
             {popupStartStep === 0 && (
               <>
-                <p>Bienvenue dans votre nouvelle vie {player.character?.name} !</p>
+                <h3>Welcome to your new life {player.character?.name}!</h3>
+
+                <p>You have just moved to your new student town. Your parents have gone home and now you have to fend for yourself... Good luck!</p>
                 
                 <div className="flex-center">
-                  <button className='btn-small' onClick={() => setPopupStartStep(1)}>Next</button>
+                  <button className='btn-small' onClick={() => setPopupStartStep(1)}>Understand</button>
                 </div>
               </>
             )}
 
             {popupStartStep === 1 && (
               <>
-                <p>Commencez par faire vos courses</p>
+                <h3>Go shopping</h3>
+
+                <p>In your early days, you decide to do your shopping by going to the nearest shop. You will need to stick to your budget... but also take care of your health. </p>
+
+                <p className="b">Objective: do your shopping for a week.</p>
                 
                 <div className="flex-center">
-                  <button className='btn-small' onClick={() => setPopupStartVisible(false)}>Faire les courses</button>
+                  <button className='btn-small' onClick={() => setPopupStartVisible(false)}>Let's go!</button>
                 </div>
               </>
             )}

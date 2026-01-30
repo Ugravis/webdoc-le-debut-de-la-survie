@@ -11,12 +11,16 @@ import PressReview from "./routes/game/social-life/PressReview"
 import Interview from "./routes/game/school/Interview"
 import Exam from "./routes/game/school/Exam"
 import Conclusion from "./routes/game/conclusion/Conclusion"
+import Documentation from "./routes/Documentation"
+import Credits from "./routes/Credits"
 
 export default function AppRoutes() {
   return (
     <Routes>
       <Route path="/" element={<Home />}></Route>
       <Route path="/home" element={<Home />}></Route>
+      <Route path="/documentation" element={<Documentation />}></Route>
+      <Route path="/credits" element={<Credits />}></Route>
 
       {/* Game */}
 

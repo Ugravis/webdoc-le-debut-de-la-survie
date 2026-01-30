@@ -2,13 +2,19 @@
 @use "sass:map";
 
 $texts-map: (
-  p1:    (size: 1rem, family: v.$font-base),
-  p2:    (size: 0.9rem, family: v.$font-base),
+  p1:     (size: 1rem, family: v.$font-base, line-height: 150%),
+  p2:     (size: 0.9rem, family: v.$font-base),
 
-  h4:    (size: 1.1rem, family: v.$font-base),
-  h4-b:  (size: 1.1rem, family: v.$font-base, weight: 500),
-  h1:    (size: 2rem, family: v.$font-special, weight: 500),
-  hHuge: (size: 4rem, family: v.$font-special)
+  p-code: (size: 1rem, family: v.$font-code),
+
+  h4:     (size: 1.1rem, family: v.$font-base),
+  h4-b:   (size: 1.1rem, family: v.$font-base, weight: 500),
+
+  hHuge:  (size: 4rem, family: v.$font-special),
+  h1:     (size: 2rem, family: v.$font-special, weight: 500),
+  h3:     (size: 1.5rem, family: v.$font-special, weight: 500),
+
+  h-logo: (size: 1.15rem, family: v.$font-special-2)
 );
 
 $text-defaults: (
@@ -44,5 +50,9 @@ $text-defaults: (
 
 p      { @include text(p1) }
 h1     { @include text(h1) }
+h3     { @include text(h3) }
 h4     { @include text(h4) }
 button { @include text(p1) }
+
+b { font-weight: 600; }
+i { font-style: italic; }

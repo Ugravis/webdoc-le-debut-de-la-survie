@@ -1,6 +1,10 @@
 #chat {
   .text {
-    width: 50%;
+    width: 40%;
+
+    img {
+      border-radius: 15px;
+    }
   }
 
   .phone {
@@ -69,5 +73,17 @@
       border-bottom-right-radius: 40px;
       padding: 10px;
     }
+  }
+
+  .choices-area {
+    width: 100%;
+  }
+
+  .next-btn-box {
+    background-color: var(--color-bg);
+    width: 100%;
+    border-bottom-left-radius: 35px;
+    border-bottom-right-radius: 35px;
+    padding: 20px 0px;
   }
 }

@@ -1,4 +1,4 @@
-import { Link, Navigate, useNavigate } from 'react-router-dom'
+import { Navigate, useNavigate } from 'react-router-dom'
 import { type StudyOption } from '../../../../data/choices/choices.types'
 import { useStore } from '../../../../lib/store/useStore'
 import choices from '../../../../data/choices/choices'
@@ -53,15 +53,6 @@ export default function StudyChoice() {
             </div>
           ))}
         </div>
-
-        <div className='flex-center'>
-          <Link
-            className='blue-link'
-            to='/game/social-life/chat'
-          >
-            Skip »
-          </Link>
-        </div>
       </section>
 
       {popupVisible && (
@@ -77,10 +68,10 @@ export default function StudyChoice() {
             </div>
 
             <div className='bottom flex-col-center gap-3'>
-              <p>Prêt à commencer votre nouvelle vie ?</p>
+              <p>Ready to start your new life?</p>
 
               <div className='gap-1'>
-                <button className='btn-small' onClick={() => navigate('/game/choice/character')}>Modify</button>
+                <button className='btn-small-secondary' onClick={() => navigate('/game/choice/character')}>Modify</button>
                 <button className='btn-small' onClick={() => navigate('/game/budget/shopping')}>Confirm</button>
               </div>
             </div>

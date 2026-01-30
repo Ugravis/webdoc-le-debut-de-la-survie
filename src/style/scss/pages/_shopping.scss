@@ -1,3 +1,5 @@
+@use "../text" as t;
+
 .embla__slide {
   .product-card {
     border: 2px solid #000;
@@ -14,6 +16,24 @@
     border: 2px solid green;
     cursor: pointer;
   }
+
+  .brand {
+    text-transform: uppercase;
+    font-weight: 600;
+    font-style: italic;
+  }
+}
+
+.receip-popup {
+  p {
+    @include t.text(p-code);
+  }
+}
+
+.budget {
+  background-color: rgb(156, 253, 255);
+  padding: 5px 15px;
+  border-radius: 5px;
 }
 
 .embla {

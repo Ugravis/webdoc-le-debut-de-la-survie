@@ -1,4 +1,4 @@
-import { Link, useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import { type City } from '../../../../data/choices/choices.types'
 import { useStore } from '../../../../lib/store/useStore'
 import choices from '../../../../data/choices/choices'
@@ -28,10 +28,11 @@ export default function CityChoice() {
               className='choice-img'
             />
 
-            <div className='flex-col mh-3 gap-3'>
+            <div className='flex-col mh-3 gap-3 bottom'>
               <div className='flex-col-center gap-1'>
                 <p className='h4-b'>{city.name}</p>
                 <p>{city.department}, {city.region}</p>
+                <p className='p2 text-center'>{city.comment}</p>
               </div>
 
               <div className='flex-center'>
@@ -45,15 +46,6 @@ export default function CityChoice() {
             </div>
           </div>
         ))}
-      </div>
-
-      <div className='flex-center'>
-        <Link
-          className='blue-link'
-          to='/game/choice/study'
-        >
-          Skip »
-        </Link>
       </div>
     </section>
   )

@@ -1,7 +1,6 @@
 import { useNavigate } from 'react-router-dom'
 import { type Character } from '../../../../data/choices/choices.types'
 import { useStore } from '../../../../lib/store/useStore'
-import { Link } from "react-router-dom";
 import choices from '../../../../data/choices/choices'
 
 export default function CharacterChoice() {
@@ -31,7 +30,7 @@ export default function CharacterChoice() {
 
             <div className='flex-col mh-3 gap-2'>
               <div className='flex-center'>
-                <p className='h4-b'>{char.name}, {char.age} ans</p>
+                <p className='h4-b'>{char.name}, {char.age} years old</p>
               </div>
 
               <div className='flex-center'>
@@ -45,15 +44,6 @@ export default function CharacterChoice() {
             </div>
           </div>
         ))}
-      </div>
-
-      <div className='flex-center'>
-        <Link
-          className='blue-link'
-          to='/game/choice/city'
-        >
-          Skip »
-        </Link>
       </div>
     </section>
   )

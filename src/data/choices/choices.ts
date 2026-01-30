@@ -7,14 +7,19 @@ const choicesData: ChoicesData = {
   "characters": [
     {
       "id": 0,
-      "name": "Roméo",
+      "name": "Adam",
       "age": 17,
       "image": "character1"
     }, {
       "id": 1,
-      "name": "Sofia",
-      "age": 18,
+      "name": "Sophie",
+      "age": 17,
       "image": "character2"
+    }, {
+      "id": 2,
+      "name": "Jean",
+      "age": 18,
+      "image": "character3"
     }
   ],
 
@@ -26,7 +31,9 @@ const choicesData: ChoicesData = {
       "name": "Reims",
       "department": "Aube",
       "region": "Grand Est",
+      "comment": "A medium-sized town in eastern France.",
       "image": "city1",
+      "price": 1,
       "effects": [
         { "cible": "budget", "value": +0.2 },
         { "cible": "mentalHealth", "value": 0 }
@@ -37,7 +44,9 @@ const choicesData: ChoicesData = {
       "name": "Lille",
       "department": "Nord",
       "region": "Hauts de France",
+      "comment": "A dynamic metropolis that is very lively at night.",
       "image": "city2",
+      "price": 1.15,
       "effects": [
         { "cible": "budget", "value": -0.2 },
         { "cible": "mentalHealth", "value": +0.2 }
@@ -48,7 +57,9 @@ const choicesData: ChoicesData = {
       "name": "Paris",
       "department": "Paris",
       "region": "Île de France",
+      "comment": "You won't get bored, but watch out for the prices.",
       "image": "city3",
+      "price": 1.25,
       "effects": [
         { "cible": "budget", "value": -0.4 },
         { "cible": "mentalHealth", "value": -0.2 }

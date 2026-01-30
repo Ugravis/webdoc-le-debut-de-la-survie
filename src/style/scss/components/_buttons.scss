@@ -19,16 +19,16 @@
   @if $type == 'primary' {
     background-color: var(--color-primary);
     color: c.$neutral-900;
-    // &:hover {
-    //   background-color: var(--color-primary);
-    // }
+    &:hover {
+      background-color: var(--color-primary-hover);
+    }
 
   } @else if $type == 'secondary' {
-    background-color: var(--color-secondary);
-    color: var(--color-bg)
-    // &:hover {
-    //   background-color: var(--color-secondary);
-    // }
+    background-color: var(--color-grey);
+    color: var(--color-text);
+    &:hover {
+      background-color: var(--color-grey-hover);
+    }
   }
 }
 
@@ -38,8 +38,12 @@
 .btn-small {
   @include button('small')
 }
+
 .btn-small-secondary {
   @include button('small', 'secondary')
+}
+.btn-large-secondary {
+  @include button('large', 'secondary')
 }
 
 .blue-link {

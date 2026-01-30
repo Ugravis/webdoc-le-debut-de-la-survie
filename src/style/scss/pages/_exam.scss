@@ -1,0 +1,26 @@
+@use "../themes" as t;
+
+#exam-page {
+  .exam-container {
+    background-color: rgb(255, 251, 240);
+    border-radius: 15px;
+    border: 2px solid rgb(255, 241, 190);
+    border-radius: 15px;
+    padding: 40px;
+    width: 770px;
+
+    p, b, h4, label, strong, h3 {
+      color: t.$neutral-900;
+    }
+
+    label, input {
+      cursor: pointer;
+    }
+  }
+
+  .popup {
+    p, b, h4, h3, label, strong {
+      color: t.$neutral-900;
+    }
+  }
+}

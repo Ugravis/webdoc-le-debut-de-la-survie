@@ -17,7 +17,9 @@ export interface City {
   name: string
   department: string
   region: string
+  comment: string
   image: string
+  price: number
   effects: PlayerEffect[]
   studiesNodeId: number
 }

@@ -1,0 +1,54 @@
+@use "../themes" as t;
+
+#budget-doc-page {
+  .text-group {
+    
+    &>div {
+      width: 50%;
+      background-color: rgb(255, 251, 240);
+      border: 2px solid rgb(255, 241, 190);
+      border-radius: 15px;
+      padding: 40px;
+
+      p, h3, ul, li, b {
+        color: t.$neutral-900;
+      }
+    }
+
+    .links {
+      a {
+        color: rgb(205, 158, 31);
+        text-decoration: underline;
+      }
+    }
+
+    .pink-tax {
+      background-color: rgb(255, 236, 239);
+      border: 2px solid rgb(255, 190, 201);
+
+      a {
+        color: rgb(205, 31, 164);
+        text-decoration: underline;
+      }
+    }
+
+    .img-article {
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      height: 100%;
+      width: 100%;
+      flex-grow: 1;
+      border-radius: 15px;
+    }
+  }
+  
+  .video-doc {
+    width: 50%;
+  }
+
+  iframe {
+    aspect-ratio: 16/9;
+    border-radius: 10px;
+  }
+}
